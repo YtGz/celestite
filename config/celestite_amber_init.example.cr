@@ -2,12 +2,6 @@ require "celestite"
 
 ENV["CELESTITE"] = Amber.env.to_s
 
-# Copy Amber logger settings, then change the color of our logger so it stands out
-
-celestite_logger = Amber.settings.logger.dup
-celestite_logger.progname = "Celestite"
-celestite_logger.color = :green
-
 # The main init...
 
 Celestite.initialize(
@@ -20,12 +14,6 @@ Celestite.initialize(
 
   # engine: Celestite::Engine::Vue,     # Uncomment this for Vue
   # engine: Celestite::Engine::Svelte,  # Uncomment this for Svelte
-
-  # #
-  # # This is the logger for the node processes to pipe stdout/stderr.  We initialized this up above.
-  # #
-
-  logger: celestite_logger,
 
   # #
   # # The component_dir defines where our .vue or .svelte components live.
